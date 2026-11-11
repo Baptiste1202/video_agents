@@ -1,0 +1,33 @@
+# Secrets
+SECRETS.local.md
+.env
+*.env.local
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+
+# Runtime data (jobs, database, logs)
+jobs/
+data/
+*.db
+*.sqlite3
+logs/
+
+# Heavy generated media: kept on disk, not in git (back them up separately)
+personas/*/content/
+
+# Inspiration shows real people: never versioned
+inspiration/**/*
+!inspiration/**/
+!inspiration/**/.gitkeep
+
+# OS / editors
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/

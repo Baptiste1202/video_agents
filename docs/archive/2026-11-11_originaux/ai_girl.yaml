@@ -1,0 +1,91 @@
+# Channel config: AI girl (Instagram Reels + TikTok)
+# Path: config/channels/ai_girl.yaml
+# Fields marked TO_DECIDE must be filled before going live.
+
+id: ai_girl
+enabled: true
+display_name: "TO_DECIDE"            # persona name shown in logs and notifications
+
+# --- Audience & positioning ---
+language: fr                  # fr | en | both
+niche: soft erotic content                     # e.g. fitness, fashion, travel, beauty, lifestyle
+content_rating: public               # public | adult (adult channels never publish to IG/TikTok/YouTube)
+persona_file: personas/ai_girl/persona.md
+reference_images: personas/ai_girl/refs/
+
+# --- Platforms ---
+platforms:
+  - instagram_reels
+  - tiktok
+
+format:
+  aspect: "9:16"
+  min_seconds: 8
+  max_seconds: 30                    # TikTok Creator Rewards only pays videos > 60 s: add a long format later if needed
+  subtitles: true
+  music: royalty_free_baked_in       # Instagram API cannot attach Instagram library audio
+
+cadence:
+  per_day: 1                         # raise to 2-3 only once quality is stable
+  preferred_hours: ["12:30", "19:00"] # Europe/Paris, to be tuned by the Analysis agent
+  timezone: Europe/Paris
+
+# --- Pipeline ---
+agents:
+  - trends
+  - scenario
+  - production
+  - control
+  - publication
+  - analysis
+
+human_review: required               # required | on_doubt | off
+
+# --- Providers (swap without touching code) ---
+providers:
+  llm: claude                        # claude | openai | gemini
+  image: manual                      # manual (Gemini app) | nano_banana_api | flux_lora | comfyui_local
+  video: manual                      # manual (Gemini/Flow) | comfyui_local | wan_rented_gpu | veo_api | kling_api | seedance_api
+  voice: none                        # none | elevenlabs
+  publisher: manual                  # manual | meta_graph | third_party
+  notifier: telegram
+
+# Settings used only when a provider is active
+provider_settings:
+  comfyui_local:
+    url: "http://127.0.0.1:8188"
+    workflow: workflows/wan22_5b_i2v.json
+  wan_rented_gpu:
+    host: runpod                     # runpod | vastai
+    gpu: RTX_4090
+    auto_shutdown_minutes: 10
+  manual:
+    inbox_dir: jobs/{job_id}/inbox/  # drop generated files here to resume the pipeline
+
+# --- Budget guardrails ---
+budget:
+  daily_usd: 2
+  monthly_usd: 50
+  stop_on_exceed: true
+
+# --- Trends ---
+trends:
+  sources: [tiktok_creative_center, instagram_reels]
+  country: FR
+  ideas_per_day: 5
+  competitors: []                    # TO_DECIDE: 10-20 accounts in the niche (AI and human)
+
+# --- Compliance ---
+compliance:
+  ai_profile_label: true             # Instagram "AI-generated profile"
+  tiktok_ai_label: true
+  commercial_mentions: ["Publicité", "Image virtuelle"]
+  rules_files:
+    - rules/instagram.yaml
+    - rules/tiktok.yaml
+
+# --- Captions ---
+captions:
+  max_chars: 300                     # API hard limit is 2,200; short captions perform better
+  hashtags_max: 5
+  link_in_bio: TO_DECIDE             # e.g. affiliate page, Telegram channel
