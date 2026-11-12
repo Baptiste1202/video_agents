@@ -7,6 +7,6 @@ Lis `BRIEF.md` et `ROADMAP.md` avant toute tâche.
 - Persona et prompts : `personas/ai_girl/persona.md`, `personas/ai_girl/refs/prompts.md` (convention de nommage des images : §1 de ce fichier). Config de chaîne : `config/channels/ai_girl.yaml`.
 - `SECRETS.local.md` contient des identifiants : ne jamais le lire sans demande explicite, ne jamais le commiter ni recopier son contenu.
 - `docs/archive/` : copies des notes d'origine avant fusion (11 nov.), pour vérification uniquement.
-- Commandes (depuis la racine) : `.venv\Scriptsctivate` puis `farm --help`, `farm config check`, `pytest`. Code dans `src/farm/`.
+- Commandes (depuis la racine) : activer le venv (`.venv/Scripts/activate`), puis `farm --help`, `farm config check`, `pytest`. Code dans `src/farm/`.
 - Langue : docs et messages en français ; code et commentaires en anglais.
 - Commits : pas de ligne `Co-Authored-By` ni d'autre mention d'attribution à Claude.
