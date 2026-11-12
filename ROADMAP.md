@@ -42,9 +42,9 @@
 ## Phase 3 — Squelette du moteur en mode manuel (semaines 4-6)
 
 - [x] Ranger le projet : structure du BRIEF, `personas/`, `config/channels/`, images renommées (11 nov.)
-- [ ] Initialiser le repo git + GitHub (privé), `.gitignore`, venv, `.env.example`, tests
+- [x] Initialiser le repo git + GitHub, `.gitignore`, venv, FFmpeg, `.env.example`, tests (12 nov.)
+- [x] Socle Python : package `farm`, CLI `farm`, chargement et validation des configs de chaîne et des règles (12 nov.)
 - [ ] Modèle de job + statuts + stockage SQLite
-- [ ] Chargement des configs de chaîne et des règles
 - [ ] Interfaces `Provider` + providers `manual` (image, vidéo, publication)
 - [ ] Agent Scénario (LLM)
 - [ ] Montage FFmpeg (plans, sous-titres, musique)

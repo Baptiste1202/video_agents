@@ -70,6 +70,12 @@ La RTX 3050 sert de banc d'essai pour apprendre toute la chaîne ; le GPU loué 
 - Niche et langue restent **en test** ; contenu osé ~30 % ; chien = Praline ; prompt de base = BASE 3 ; musique ajoutée dans l'app ; Telegram reporté ; projet déplacé hors OneDrive + dépôt GitHub privé.
 - Première série à automatiser : **« Hi there »** (image de base fixe, tenues Pinterest, animation avec variantes).
 
+### 2026-11-12 — Outils
+
+- LLM : **Claude Opus 5.5** par API (`claude-opus-5-5`, effort `medium`).
+- Prompt de base : **BASE 3 gardé tel quel** pour l'instant (y compris « fresh youthful face », à surveiller).
+- FFmpeg 9.0.2 installé (winget). Dépôt GitHub : `Baptiste1202/video_agents`.
+
 ## 3. Critères de validation de la niche
 
 Sur 3 semaines de publication quotidienne :

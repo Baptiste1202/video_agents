@@ -1,0 +1,18 @@
+# TikTok rules applied by the Control agent.
+# Maintained by the Rules agent (proposals only, human validates). Sources: docs/recherche.md.
+platform: tiktok
+updated: "2026-11-11"
+
+video:
+  aspect: "9:16"
+  # Duration and size limits not verified yet: to be filled by the Rules agent.
+
+required_labels:
+  - "AI-generated content"     # TikTok AI label on realistic AI content
+
+banned_terms: []
+
+notes:
+  - "Official API: posts stay private until the app passes TikTok's audit; internal apps do not pass it."
+  - "Publishing is semi-automatic for now: the human schedules the week in TikTok Studio."
+  - "Creator Rewards only pays videos longer than 60 s."

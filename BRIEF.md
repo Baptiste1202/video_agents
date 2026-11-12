@@ -206,14 +206,14 @@ Structure de repo proposée :
 
 ```
 config/channels/   personas/   rules/   jobs/   outfits/   inspiration/{inbox,archive,ideas}/   workflows/
-src/agents/   src/providers/{llm,image,video,voice,publisher}/   src/core/{pipeline,budget,storage,notify}/
+src/farm/agents/   src/farm/providers/{llm,image,video,voice,publisher}/   src/farm/core/{config,pipeline,budget,storage,notify}/   src/farm/cli.py
 tests/   docs/   .env.example   CLAUDE.md   BRIEF.md   ROADMAP.md
 ```
 
 
 ## 9. Fournisseurs à prévoir (à brancher plus tard)
 
-- **LLM :** Claude, OpenAI, Gemini (API). Rôle de "cerveau" uniquement : Claude ne génère ni images ni vidéos.
+- **LLM :** Claude, OpenAI, Gemini (API). Rôle de "cerveau" uniquement : Claude ne génère ni images ni vidéos. Choix actuel : Claude Opus 5.5 (`claude-opus-5-5`, 4 $ / 20 $ par million de tokens en entrée / sortie, ~0,05-0,07 $ par vidéo), réglé dans `provider_settings.claude`.
 - **Image :** Nano Banana (API Gemini), Flux + LoRA (fal.ai / Replicate), `comfyui_local`.
 - **Vidéo :**
   - API Gemini : `gemini-omni-1.1-flash` (~0,10 $/s en 720p, ~0,80 $ le clip de 8 s, ~25-50 $ pour 30 vidéos/mois avec un essai raté). Il **remplace les modèles Veo en préversion, retirés de l'API le 22 octobre 2026** : la mention "Veo 3.1 API" est donc à revérifier avant de coder `veo_api`.

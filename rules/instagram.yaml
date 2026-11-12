@@ -1,0 +1,25 @@
+# Instagram Reels rules applied by the Control agent.
+# Maintained by the Rules agent (proposals only, human validates). Sources: docs/recherche.md.
+platform: instagram_reels
+updated: "2026-11-11"
+
+video:
+  aspect: "9:16"
+  min_seconds: 5
+  max_seconds: 90          # outside this range the video is posted as a plain video, not a Reel
+  max_size_mb: 100
+  containers: [mp4, mov]
+  codecs: [h264]
+
+caption_max_chars: 2200
+max_api_posts_per_24h: 100
+library_music_via_api: false   # trending sounds can only be added in the app
+
+required_labels:
+  - "AI-generated profile"     # profile-level label, mandatory since 2026-08-31
+
+banned_terms: []               # filled by the human / proposed by the Rules agent
+
+notes:
+  - "API publishing requires a Business account linked to a Facebook Page and Meta Business."
+  - "Commercial content: 'Publicité' or 'Collaboration commerciale' + 'Image virtuelle' (French influencer law)."
