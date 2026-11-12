@@ -44,7 +44,7 @@
 - [x] Ranger le projet : structure du BRIEF, `personas/`, `config/channels/`, images renommées (11 nov.)
 - [x] Initialiser le repo git + GitHub, `.gitignore`, venv, FFmpeg, `.env.example`, tests (12 nov.)
 - [x] Socle Python : package `farm`, CLI `farm`, chargement et validation des configs de chaîne et des règles (12 nov.)
-- [ ] Modèle de job + statuts + stockage SQLite
+- [x] Modèle de job + statuts + stockage SQLite, CLI `farm job new/list/show/status` (12 nov.)
 - [ ] Interfaces `Provider` + providers `manual` (image, vidéo, publication)
 - [ ] Agent Scénario (LLM)
 - [ ] Montage FFmpeg (plans, sous-titres, musique)

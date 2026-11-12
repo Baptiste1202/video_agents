@@ -21,7 +21,7 @@ Grille issue du brief initial (5 nov.) : une IA qui construit le système sans c
 | Budget | Combien par mois, plafond ? | 50 €/mois en test, plafond dur dans le code | ✅ 2 $/jour, 50 $/mois (`ai_girl.yaml`). Plafond global de pilotage : 250 €/mois |
 | KPI de succès | Qu'est-ce qui dit que ça marche à 30 et 90 jours ? | Taux de visionnage complet, partages, abonnés gagnés par vidéo | ✅ Critères du 9 nov. (§3) + points d'étape de la ROADMAP |
 | Statut juridique | Qui encaisse l'argent ? | Micro-entreprise [à vérifier avec un comptable] | ❓ Ouvert |
-| Hébergement | Où tourne le système ? | Le PC au début, puis petit serveur ou n8n cloud | ✅ PC local, hors OneDrive ; code sur GitHub (privé). Serveur : plus tard. GPU : `docs/hebergement_gpu.md` |
+| Hébergement | Où tourne le système ? | Le PC au début, puis petit serveur ou n8n cloud | ✅ PC local, hors OneDrive ; code sur GitHub, dépôt **public** (choix du 12 nov.). Serveur : plus tard. GPU : `docs/hebergement_gpu.md` |
 | Musique | D'où vient-elle ? | Libre de droits, intégrée au fichier | ✅ Son tendance ajouté dans l'app TikTok au moment de publier ; le pipeline sort des vidéos muettes |
 | LLM | Quel cerveau pour les agents ? | Claude par API | ✅ Claude par API (clé disponible ; facturée à part de l'abonnement claude.ai) |
 
@@ -75,6 +75,8 @@ La RTX 3050 sert de banc d'essai pour apprendre toute la chaîne ; le GPU loué 
 - LLM : **Claude Opus 5.5** par API (`claude-opus-5-5`, effort `medium`).
 - Prompt de base : **BASE 3 gardé tel quel** pour l'instant (y compris « fresh youthful face », à surveiller).
 - FFmpeg 9.0.2 installé (winget). Dépôt GitHub : `Baptiste1202/video_agents`.
+- Le dépôt **reste public** (choix de l'utilisateur ; il contient la doc, les refs de la persona et les exports d'analytics, jamais les identifiants ni `inspiration/`). Remplace « dépôt privé » du 11 nov.
+- Jobs : **SQLite fait foi** (`data/farm.db`, une ligne par vidéo avec la fiche complète en JSON) ; `jobs/<id>/job.json` en est une copie lisible, réécrite à chaque sauvegarde ; dépôts manuels dans `jobs/<id>/inbox/`. Id : `<AAAAMMJJ>-<chaîne>-<NNN>`. Chaque changement de statut est tracé (date, motif, forcé ou non) ; un passage hors circuit demande `--force`.
 
 ## 3. Critères de validation de la niche
 
